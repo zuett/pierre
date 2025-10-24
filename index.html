@@ -1,89 +1,1200 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
-	
-	<script type="text/javascript" src="sketch.js"></script>
-
-  
   <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
-
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <link rel="icon" sizes="180x180" href="./assets/images/Logo.png" type="image/png">
-
-  <title>pierre portfolio</title>  
-
-<link href="./main.3f6952e4.css" rel="stylesheet"></head>
-
-<body class="minimal">
-<div id="site-border-left"></div>
-<div id="site-border-right"></div>
-<div id="site-border-top"></div>
-<div id="site-border-bottom"></div>
-<!-- Add your content of header -->
-<header>
-  <nav class="navbar  navbar-fixed-top navbar-inverse">
-    <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav ">
-          <li><a href="./index.html" title="">01 : Home</a></li>
-          <li><a href="./works.html" title="">02 : Works</a></li>
-          <li><a href="./about.html" title="">03 : About me</a></li>
-          <li><a href="./contact.html" title="">04 : Contact</a></li>
-        </ul>
-
-
-      </div> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+  <title>Pierre Mikhiel – Portfolio</title>
+  <link rel="icon" type="image/png" href="assets/images/Logo.png">
+  <link rel="apple-touch-icon" href="assets/images/Logo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Meddon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="loader-overlay" style="position:fixed;z-index:9999;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
+    <div class="loader">
+      <!-- Y (for style defs) -->
+      <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
+        <defs>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="b">
+            <stop stop-color="#973BED"></stop>
+            <stop stop-color="#007CFF" offset="1"></stop>
+          </linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="c">
+            <stop stop-color="#FFC800"></stop>
+            <stop stop-color="#F0F" offset="1"></stop>
+            <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform>
+          </linearGradient>
+          <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="d">
+            <stop stop-color="#00E0ED"></stop>
+            <stop stop-color="#00DA72" offset="1"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      <!-- P -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="10" stroke="url(#c)" d="M 12 60 V 4 h 24 a 20 20 0 1 1 0 40 H 12" class="spin" pathLength="360"></path>
+      </svg>
+      <!-- I -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 32 4 V 60" class="dash" pathLength="360"></path>
+      </svg>
+      <!-- E -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" d="M 52 4 H 12 V 60 H 52 M 12 32 H 44" class="dash" pathLength="360"></path>
+      </svg>
+      <!-- R -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#c)" d="M 12 60 V 4 h 24 a 16 16 0 1 1 0 32 H 12 l 28 24" class="dash" pathLength="360"></path>
+      </svg>
+      <!-- R -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#c)" d="M 12 60 V 4 h 24 a 16 16 0 1 1 0 32 H 12 l 28 24" class="dash" pathLength="360"></path>
+      </svg>
+      <!-- E -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" d="M 52 4 H 12 V 60 H 52 M 12 32 H 44" class="dash" pathLength="360"></path>
+      </svg>
     </div>
-  </nav>
-</header>
-<!-- Add your site or app content here -->
-  <div class="hero-full-container background-image-container white-text-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="hero-full-wrapper">
-            <div class="text-content">
-              <h1>Hello,<br>
-                <span id="typed-strings">
-                  <span>I'm Pierre Mikhiel</span>
-                  <span>Interactive Media Artist</span>
-                  <span>This is my portfolio</span>
-                </span>
-                <span id="typed"></span>
-              </h1>
+  </div>
+  <div class="custom-cursor"></div>
+  <section id="hero-section">
+    <canvas id="blob-canvas"></canvas>
+    <div class="hero-content">
+      <h1 class="hero-title">Hi, I'm Pierre Mikhiel</h1>
+      <h2 class="hero-rotator">I'm an XR <span id="rotating-title">Developer</span></h2>
+    </div>
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll down</span>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </section>
+  <header>
+    <div class="nav-sticky-wrapper">
+      <div class="nav-card">
+        <!-- Mobile hamburger menu -->
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="#personal">Personal</a></li>
+            <li><a href="#work-experience">Work Experience</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#personal-work">Personal Work</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div style="height: 64px;"></div>
+  <main>
+    <section id="personal">
+      <div class="personal-container">
+        <div class="profile-card">
+          <div class="profile-card-glow"></div>
+          <div class="profile-card-inner">
+            <img src="assets/portfolio_pic.jpg" alt="Pierre" class="profile-image">
+          </div>
+        </div>
+        
+        <h2 class="signature-name">Pierre Mikhiel</h2>
+        <div class="custom-card">
+          <div class="bio-card-halo"></div>
+          <div class="custom-card-glow"></div>
+          <div class="custom-card-inner">
+            <div class="bio-text">
+              <p class="artistic-text">
+                <span class="word">I'm</span> 
+                <span class="word">an</span> 
+                <span class="word key-term">XR</span> 
+                <span class="word key-term">Developer,</span> 
+                <span class="word key-term">Designer,</span> 
+                <span class="word">and</span> 
+                <span class="word key-term">Researcher</span> 
+                <span class="word">combining</span> 
+                <span class="word">expertise</span> 
+                <span class="word">in</span> 
+                <span class="word">Computer</span> 
+                <span class="word">Science,</span> 
+                <span class="word">Film,</span> 
+                <span class="word">and</span> 
+                <span class="word">Interactive</span> 
+                <span class="word">Media</span> 
+                <span class="word">to</span> 
+                <span class="word">create</span> 
+                <span class="word">innovative</span>
+                <span class="word">and</span>  
+                <span class="word">immersive</span> 
+                <span class="word">systems</span> 
+                <span class="word">at</span> 
+                <span class="word">the</span> 
+                <span class="word">forefront</span> 
+                <span class="word">of</span> 
+                <span class="word">emerging</span> 
+                <span class="word">technology.</span>
+              </p>
+              <a href="assets/Resume.pdf" download="Resume.pdf" target="_blank" class="btn">Download Resume</a>
+            </div>
+            <div class="contact-section">
+              <div class="contact-line"></div>
+              <h4 class="contact-title">Contact</h4>
+              <div class="contact-items">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" stroke-width="2" fill="none"/>
+                      <path d="M22 6l-10 7L2 6" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                  </div>
+                  <a href="mailto:pierre.m@nyu.edu" class="contact-text">pierre.m@nyu.edu</a>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                  </div>
+                  <a href="tel:+971559845520" class="contact-text">+971 559845520</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
+    <section id="work-experience">
+      <h2>Work Experience</h2>
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="work-image">
+            <img src="assets/mental.png" alt="Mental.ae">
+          </div>
+          <div class="work-content">
+            <h3>Internship</h3>
+            <h4>Mental.ae | Abu Dhabi, UAE | Nov 2024 - Jan 2025</h4>
+            <p>I executed comprehensive QA testing on interactive food safety training modules, identifying critical UX flaws to enhance usability. Utilizing Cinemachine within Unity 3D, I utilized dynamic camera systems that significantly increased user engagement and collaborated with a cross-functional team to ensure all project milestones were met.</p>
+            <div class="tech-tags">
+              <span class="tag">QA Testing</span>
+              <span class="tag">UX Design</span>
+              <span class="tag">Unity 3D</span>
+              <span class="tag">Cinemachine</span>
+              <span class="tag">Project Management</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="compact-work-row">
+          <div class="compact-work-card" data-expanded="false">
+            <div class="compact-work-image">
+              <img src="assets/athletics.jpg" alt="NYU Athletics Center">
+            </div>
+            <div class="compact-work-content">
+              <h3>Fitness Assistant Coach</h3>
+              <h4>NYU Athletics Center | Shanghai | Jan - May 2024</h4>
+              <div class="expand-indicator">View more</div>
+            </div>
+            <div class="expanded-work-content" style="display: none;">
+              <p>My role involved guiding members on the safe and effective use of fitness equipment and preventing injury. I also developed and led wellness activities and group fitness sessions to promote a campus-wide culture of health and well-being.</p>
+              <div class="tech-tags">
+                <span class="tag">Health & Wellness</span>
+                <span class="tag">Fitness Instruction</span>
+                <span class="tag">Community Engagement</span>
+                <span class="tag">Safety Protocols</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="compact-work-card" data-expanded="false">
+            <div class="compact-work-image">
+              <img src="assets/RA.jpg" alt="NYU Housing">
+            </div>
+            <div class="compact-work-content">
+              <h3>Residential Assistant</h3>
+                <h4>NYU Housing | Abu Dhabi | Aug - Nov 2023, Aug 2025 - present</h4>
+              <div class="expand-indicator">View more</div>
+            </div>
+            <div class="expanded-work-content" style="display: none;">
+              <p>As a Residential Assistant, I executed diverse social and educational events designed to foster an inclusive and engaged residential community. I also advised students on academic and personal concerns, connecting them with key university resources.</p>
+              <div class="tech-tags">
+                <span class="tag">Community Building</span>
+                <span class="tag">Event Planning</span>
+                <span class="tag">Mentorship</span>
+                <span class="tag">Peer Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="research">
+      <h2>Research Experience</h2>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-image">
+            <img src="assets/AIM_LAB.png" alt="VR Emotion Induction Toolkit">
+          </div>
+          <div class="research-content">
+            <h3>VR Emotion Induction Toolkit</h3>
+            <p>As a Research Assistant at Aim Lab NYUAD, I contributed to a modular VR toolbox for systematically inducing and studying the six universal emotions and stress. I spearheaded the design of the "Anger" module, engineering interactive scenarios using social unfairness and time pressure to trigger a targeted response. My role also involved implementing biometric and behavioral data analysis protocols to empirically validate the emotional states elicited by the VR toolkit.</p>
+            <div class="tech-tags">
+              <span class="tag">VR Research</span>
+              <span class="tag">Emotion Induction</span>
+              <span class="tag">Biometric Data</span>
+              <span class="tag">UX Design</span>
+              <span class="tag">Unity 3D</span>
+              <span class="tag">C#</span>
+            </div>
+            <div class="research-actions">
+              <a href="#" class="coming-soon-btn">Coming Soon</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="research-card">
+          <div class="research-image">
+            <img src="assets/vER_image.png" alt="Virtual Human Companionship for Preoperative Care">
+          </div>
+          <div class="research-content">
+            <h3>vER: Virtual Human Companionship for Preoperative Care</h3>
+            <p>As a Co-Author, I designed virtual agents that leverage social presence to mitigate patient anxiety in simulated pre-operative hospital settings. I validated the agents' efficacy by conducting a pilot study that integrated biometric tracking with qualitative post-study surveys. The findings have been presented at prestigious international venues including IMX ACM Conference 2025 and EMRN Barcelona 2025.</p>
+            <div class="tech-tags">
+              <span class="tag">Healthcare Tech</span>
+              <span class="tag">Virtual Agents</span>
+              <span class="tag">Biometric Tracking</span>
+              <span class="tag">User Studies</span>
+              <span class="tag">Preoperative Care</span>
+            </div>
+            <div class="research-actions">
+              <a href="https://dl.acm.org/doi/10.1145/3706370.3731639" target="_blank" class="action-btn">View Publication →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="personal-work">
+      <h2>Projects & Installations</h2>
+      <div class="projects-grid">
+        <div class="project-card" data-project="memories">
+          <div class="project-image">
+            <img src="assets/images/memories.png" alt="Memories in Frames">
+          </div>
+          <div class="project-overlay">
+            <h3>Memories in Frames</h3>
+            <p>An evocative VR experience bringing images to life, linking reality and virtual reality in an expedition to understand memory.</p>
+            <button class="coming-soon-btn">Coming Soon</button>
+          </div>
+        </div>
+        <div class="project-card" data-project="mondrian">
+          <div class="project-image">
+            <img src="assets/images/mondrian.jpg" alt="Mondrian's Mirage">
+          </div>
+          <div class="project-overlay">
+            <h3>Mondrian's Mirage</h3>
+            <p>A VR installation that was exhibited at Louvre Abu Dhabi.</p>
+            <button class="view-project-btn">View Project</button>
+          </div>
+        </div>
+        <div class="project-card" data-project="whispers">
+          <div class="project-image">
+            <img src="assets/images/whispers2.png" alt="Whispers from the Depth">
+          </div>
+          <div class="project-overlay">
+            <h3>Whispers from the Depth</h3>
+            <p>An XR performance piece presented at the NYUAD Black Box Theater.</p>
+            <button class="view-project-btn">View Project</button>
+          </div>
+        </div>
+        <div class="project-card" data-project="beat-hoven">
+          <div class="project-image">
+            <img src="assets/images/beat/beat5.png" alt="Beat-Hoven">
+          </div>
+          <div class="project-overlay">
+            <h3>Beat-Hoven</h3>
+            <p>An interactive, Arduino-based musical game featured in the IM Showcase.</p>
+            <button class="view-project-btn">View Project</button>
+          </div>
+        </div>
+        <div class="project-card" data-project="mindportal">
+          <div class="project-image">
+            <img src="assets/images/p5js/p5js.png" alt="The MindPortal">
+          </div>
+          <div class="project-overlay">
+            <h3>The MindPortal</h3>
+            <p>An interactive and generative portal created using p5.js.</p>
+            <button class="view-project-btn">View Project</button>
+          </div>
+        </div>
+        <div class="project-card" data-project="meta-rave">
+          <div class="project-image">
+            <img src="assets/images/alien_meta_rave.png" alt="Alien Meta Rave">
+          </div>
+          <div class="project-overlay">
+            <h3>Alien Meta Rave</h3>
+            <p>A live VR music performance in New York, featuring a virtual world projected behind the performer.</p>
+            <button class="view-project-btn">View Project</button>
+          </div>
+        </div>
+        <div class="project-card" data-project="are-you-there">
+          <div class="project-image">
+            <img src="assets/images/Logo.png" alt="Are You There?">
+          </div>
+          <div class="project-overlay">
+            <h3>Are You There?</h3>
+            <p>A hybrid live and digital performance at La MaMa Studio (NYC), exploring embodiment and virtual identity.</p>
+            <button class="coming-soon-btn">Coming Soon</button>
+          </div>
+        </div>
+        <div class="project-card" data-project="spiral">
+          <div class="project-image">
+            <img src="assets/the spiral.JPG" alt="The Spiral">
+          </div>
+          <div class="project-overlay">
+            <h3>The Spiral</h3>
+            <p>A large-scale kinetic installation exhibited at NYU New York, integrating physical suspended structures with virtual counterparts.</p>
+            <button class="view-project-btn">View Project</button>
+          </div>
+        </div>
+        <div class="project-quad" aria-label="Other Unity projects">
+          <div class="project-quad-item" data-project="unity-mini-game" aria-label="Mini Game Level Design">
+            <div class="project-quad-overlay">
+              <h4>Mini Game Level Design</h4>
+            </div>
+          </div>
+          <div class="project-quad-item placeholder" data-project="unity-proj-2" aria-label="VR Shooting Game">
+            <div class="project-quad-overlay">
+              <h4>VR Shooting Game</h4>
+            </div>
+          </div>
+          <div class="project-quad-item placeholder" data-project="unity-proj-3" aria-label="Coming soon 2">
+            <div class="project-quad-overlay">
+              <h4>Coming soon</h4>
+            </div>
+          </div>
+          <div class="project-quad-item placeholder" data-project="unity-proj-4" aria-label="Coming soon 3">
+            <div class="project-quad-overlay">
+              <h4>Coming soon</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="modal-image">
+          <img id="modal-img" src="" alt="">
+        </div>
+        <div class="modal-body">
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>
+          <div id="modal-tags" class="tech-tags"></div>
+          <div id="modal-buttons" class="modal-buttons"></div>
+        </div>
+      </div>
     </div>
-  </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-     type();
-     movingBackgroundImage();
-  });
-</script>
+  </main>
+  
+  <script>
+    // Project data for modal content
+    const projectData = {
+      "unity-mini-game": {
+        title: "Mini Game Level Design",
+        description: "A 3D adventure game where Ellen explores an alien planet filled with strange flora, hostile creatures, and interactive puzzles.",
+        tags: ["Unity", "C#", "Level Design", "Gameplay", "Game Design"],
+        image: "assets/mini game.png",
+        detailedContent: `
+          <div class=\"project-details\">
+            <div style=\"text-align:center; margin-bottom: 1.5rem;\">
+              <h2 style=\"margin: 0 0 0.5rem 0;\">Mini Game Level Design</h2>
+              <p style=\"font-size: 1.1em; color: #666; margin: 0;\">Exploration, combat, and environment-driven puzzles</p>
+            </div>
+            <blockquote>
+              <p style=\"font-size: 16px; line-height: 1.6; margin-bottom: 1.25rem;\">A 3D adventure game where Ellen explores an alien planet filled with strange flora, hostile creatures, and interactive puzzles. Using her wizard staff, she battles enemies, activates pressure pads, and escapes through a portal guarded by a powerful robot. The level combines exploration, combat, and environmental storytelling through color, sound, and progression.</p>
+            </blockquote>
+            <!-- Full-width video above the image gallery -->
+            <div style=\"border-radius:10px; overflow:hidden; background:#000; margin-bottom: 1rem;\">
+              <iframe width=\"100%\" height=\"400\" src=\"https://www.youtube.com/embed/dX48YfDCQYQ\" title=\"Mini Game Level Design\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen style=\"display:block;\"></iframe>
+            </div>
 
+            <!-- Mini gallery (table-like grid) -->
+            <div style=\"margin-top: 1rem;\">
+              <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;\">
+                <figure style=\"margin:0; background:#fff; border-radius:10px; overflow:hidden;\">
+                  <img src=\"assets/images/mini game/creating terrain.png\" alt=\"creating terrain\" style=\"width:100%; height:auto; display:block;\">
+                  <figcaption style=\"padding:0.5rem 0.75rem; font-size:0.9rem; color:#555;\">creating terrain</figcaption>
+                </figure>
+                <figure style=\"margin:0; background:#fff; border-radius:10px; overflow:hidden;\">
+                  <img src=\"assets/images/mini game/adding rocks and environment.png\" alt=\"adding rocks and environment\" style=\"width:100%; height:auto; display:block;\">
+                  <figcaption style=\"padding:0.5rem 0.75rem; font-size:0.9rem; color:#555;\">adding rocks and environment</figcaption>
+                </figure>
+                <figure style=\"margin:0; background:#fff; border-radius:10px; overflow:hidden;\">
+                  <img src=\"assets/images/mini game/adding and coding moving platforms.png\" alt=\"adding and coding moving platforms\" style=\"width:100%; height:auto; display:block;\">
+                  <figcaption style=\"padding:0.5rem 0.75rem; font-size:0.9rem; color:#555;\">adding and coding moving platforms</figcaption>
+                </figure>
+                <figure style=\"margin:0; background:#fff; border-radius:10px; overflow:hidden;\">
+                  <img src=\"assets/images/mini game/creating nav mesh for creatures.png\" alt=\"creating nav mesh for creatures\" style=\"width:100%; height:auto; display:block;\">
+                  <figcaption style=\"padding:0.5rem 0.75rem; font-size:0.9rem; color:#555;\">creating nav mesh for creatures</figcaption>
+                </figure>
+              </div>
+            </div>
+            
+          </div>
+        `
+      },
+      "unity-proj-2": {
+        title: "VR Shooting Game",
+        description: "An immersive VR shooting experience exploring spatial design, navigation, and interactivity.",
+        tags: ["Unity 3D", "XR Interaction Toolkit", "C#", "Blender", "VR"],
+        image: "assets/images/VR shooting game/VR shooting game.png",
+        detailedContent: `
+          <div class="project-details">
+            <div style="text-align:center; margin-bottom: 1.5rem;">
+              <h2 style="margin: 0 0 0.5rem 0;">VR Shooting Game 🎯</h2>
+            </div>
 
-<script type="text/javascript" src="./main.70a66962.js"></script></body>
+            <div class="project-intro" style="margin-bottom: 1.25rem;">
+              <p style="font-size: 16px; line-height: 1.7; margin: 0;">
+                I worked on this project to learn how to code events and create animations in Unity. I wanted to understand how to make interactive systems where players can actually interact with objects in VR. Through this project, I learned how to use Unity 3D, XR Interaction Toolkit, and C# to build responsive environments and dynamic gameplay systems.
+              </p>
+            </div>
 
-</html>
+            <div class="project-section" style="margin: 1.25rem 0;">
+              <h3 style="margin: 0 0 0.5rem 0;">Technical Breakdown</h3>
+              <h4 style="margin: 0.75rem 0 0.25rem 0;">Gun System</h4>
+              <ul style="margin: 0 0 0.75rem 1.25rem; line-height: 1.7; color: #555;">
+                <li>Integrated weapon prefab with accurate <strong>colliders</strong> and <strong>attach transforms</strong> for realistic hand alignment.</li>
+                <li>Implemented a <strong>C# shooting system</strong> responding to VR controller input.</li>
+                <li>Added synchronized <strong>trigger animations</strong> and adjustable <strong>projectile speed</strong> for balanced gameplay.</li>
+              </ul>
+              <div style="margin: 1rem 0; display: flex; gap: 1rem;">
+                <img src="assets/images/VR shooting game/gun setup.png" style="width: 47.5%; border-radius: 10px;" alt="Gun setup and shooting script">
+                <img src="assets/images/VR shooting game/gun setup2.png" style="width: 47.5%; border-radius: 10px;" alt="Gun setup configuration">
+              </div>
+
+              <h4 style="margin: 0.75rem 0 0.25rem 0;">Target System</h4>
+              <ul style="margin: 0 0 0.75rem 1.25rem; line-height: 1.7; color: #555;">
+                <li>Designed modular target prefabs with <strong>colliders</strong> and <strong>dynamic fill meshes</strong>.</li>
+                <li>Created a script that removes the target fill on impact to indicate successful hits.</li>
+                <li>Distributed hidden and visible targets to encourage exploration and accuracy.</li>
+              </ul>
+              <div style="margin: 1rem 0; display: flex; gap: 1rem; align-items: flex-start; justify-content: center;">
+                <img src="assets/images/VR shooting game/target1.png" style="width: 28.5%; border-radius: 10px; height: auto;" alt="Target prefab and hit feedback">
+                <img src="assets/images/VR shooting game/target code.png" style="width: 400px; height: 300px; border-radius: 10px; transform: rotate(-90deg); object-fit: contain;" alt="Target code implementation">
+              </div>
+
+              <h4 style="margin: 0.75rem 0 0.25rem 0;">Environment Design</h4>
+              <ul style="margin: 0 0 0.75rem 1.25rem; line-height: 1.7; color: #555;">
+                <li>Built the level using <strong>industrial prefabs</strong>, walls, and props for structural references.</li>
+                <li>Optimized <strong>lighting</strong> and <strong>fog density</strong> to create atmosphere and maintain VR performance.</li>
+                <li>Guided user movement through subtle <strong>spatial cues</strong> while preserving freedom to explore.</li>
+              </ul>
+              <div style="margin: 1rem 0; display: flex; gap: 1rem;">
+                <img src="assets/images/VR shooting game/terrain overview.png" style="width: 47.5%; border-radius: 10px;" alt="Terrain overview">
+                <img src="assets/images/VR shooting game/Terrain Overview2.png" style="width: 47.5%; border-radius: 10px;" alt="Terrain overview with lighting">
+              </div>
+            </div>
+
+            <div class="project-section" style="margin: 1.25rem 0;">
+              <h3 style="margin: 0 0 0.5rem 0;">Design Intent</h3>
+              <p style="font-size: 16px; line-height: 1.7; margin: 0;">
+                Guided by Jaron Lanier’s idea of VR as “an illusion of another place or body,” the game focuses on creating believable presence through spatial realism and responsive interactivity. Though designed for entertainment, the framework can extend into <strong>simulation-based training</strong> scenarios like tactical or precision shooting exercises.
+              </p>
+            </div>
+
+            <div class="project-section" style="margin: 1.25rem 0;">
+              <h3 style="margin: 0 0 0.5rem 0;">Key Features</h3>
+              <ul style="margin: 0 0 0.75rem 1.25rem; line-height: 1.7; color: #555;">
+                <li>VR weapon system with real-time physics and feedback</li>
+                <li>Interactive targets with visual response</li>
+                <li>Optimized lighting and terrain design</li>
+                <li>Modular and scalable architecture</li>
+              </ul>
+              <div style="margin: 1rem 0;">
+                <img src="assets/images/VR shooting game/VR shooting game.png" style="width: 75%; border-radius: 10px; display: block; margin: 0 auto;" alt="Final gameplay build">
+              </div>
+            </div>
+          </div>
+        `
+      },
+      "unity-proj-3": {
+        title: "Unity Project 3",
+        description: "Placeholder project.",
+        tags: ["Unity"],
+        image: "assets/images/Logo.png"
+      },
+      "unity-proj-4": {
+        title: "Unity Project 4",
+        description: "Placeholder project.",
+        tags: ["Unity"],
+        image: "assets/images/Logo.png"
+      },
+      memories: {
+        title: "Memories in Frames",
+        description: "An evocative VR experience bringing images to life, linking reality and virtual reality in an expedition to understand memory.",
+        tags: ["Exhibition", "VR", "Unity3D", "Interactive Experience", "Hybrid VR"],
+        image: "https://via.placeholder.com/800x400/ff6b6b/ffffff?text=Memories+in+Frames"
+      },
+      mondrian: {
+        title: "Mondrian's Mirage",
+        description: "A VR installation that was exhibited at Louvre Abu Dhabi.",
+        tags: ["VR Installation", "Art Exhibition", "Unity 3D"],
+        image: "assets/images/Mondrian/bg.png",
+        detailedContent: `
+          <div class="project-details">
+            <div style="text-align:center; margin-bottom: 1.5rem;">
+              <h2 style="margin: 0 0 0.5rem 0;">Mondrian's Mirage</h2>
+              <p style="font-size: 1.1em; color: #666; margin: 0;">A portal through art</p>
+            </div>
+            <blockquote>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">Mondrian's Mirage is an immersive XR project that transforms Piet Mondrian's 1922 painting Composition with Blue, Red, Yellow, and Black into an interactive 3D environment using Unity 3D. I translated Mondrian’s abstract forms into architectural spaces, allowing users to navigate through his iconic lines and colors. The experience culminates in a dynamic sequence where users are teleported into the painting’s structure, simulating a freefall through its geometric forms. By combining 3D modeling, virtual navigation, and immersive transitions, this project explores the boundary between physical and abstract art, offering a unique, interactive reinterpretation of Mondrian’s work.</p>
+            </blockquote>
+            <div class="project-gallery" style="margin: 2rem 0;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                <div>
+                  <img src="assets/images/Mondrian/img1.jpg" style="width: 100%; border-radius: 10px;" alt="Showcase 1">
+                </div>
+                <div>
+                  <img src="assets/images/Mondrian/img2.png" style="width: 100%; border-radius: 10px;" alt="Showcase 2">
+                </div>
+                <div>
+                  <img src="assets/images/Mondrian/img3.jpg" style="width: 100%; border-radius: 10px;" alt="Testing at the showcase">
+                  <p style="text-align: center; margin-top: 0.5rem; font-size: 0.9em; color: #666;">Testing at the showcase</p>
+                </div>
+                <div>
+                  <img src="assets/images/Mondrian/img4.png" style="width: 100%; border-radius: 10px;" alt="Showcase 4">
+                </div>
+              </div>
+            </div>
+            <div class="project-video" style="margin: 2rem 0;">
+              <iframe width="100%" height="400" src="https://www.youtube.com/embed/y1WSK_G40eo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 10px;"></iframe>
+            </div>
+          </div>
+        `
+      },
+      whispers: {
+        title: "Whispers from the Depth",
+        description: "A Live XR performance performed at the black box at NYUAD",
+        tags: ["XR Performance", "Theater", "Immersive Storytelling", "Motion Capture", "Environmental Art"],
+        image: "assets/images/whispers_banner.png",
+        detailedContent: `
+          <div class="project-details">
+            <div style="text-align:center; margin-bottom: 1.5rem;">
+              <h2 style="margin: 0 0 0.5rem 0;">Whispers from the Depth</h2>
+              <p style="font-size: 1.1em; color: #666; margin: 0;">A Live XR performance performed at the black box at NYUAD</p>
+            </div>
+            <blockquote>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">
+                Whispers from the Depth is an immersive XR performance that leverages advanced motion capture technology, real-time animation, and immersive sound design to address the critical issue of marine pollution. Utilizing a Rokoko motion-capture suit, I directed the seamless translation of the performer's movements into a dynamic virtual avatar, projected in real-time onto a large-scale canvas. This integration of live performance with digital environments created a compelling, interactive narrative that deepened audience engagement.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">
+                I developed and curated the visual framework, featuring an ocean goddess surrounded by meticulously animated marine life—whales, dolphins, and turtles—symbolizing the devastating effects of human-induced ocean pollution. The audio design was crafted to complement the visual narrative, incorporating ambient soundscapes and authentic marine acoustics with an escalating musical score to heighten emotional impact and convey the urgency of environmental action.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">
+                By combining XR technologies, motion capture, and immersive audiovisual storytelling, Whispers from the Depth exemplifies the use of cutting-edge techniques to merge art and environmental advocacy, fostering a powerful call to action for ocean conservation.
+              </p>
+            </blockquote>
+            
+            <div class="project-gallery" style="margin: 2rem 0;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                <div>
+                  <img src="assets/images/work001-02.png" style="width: 100%; border-radius: 10px;" alt="Event poster">
+                  <p style="text-align: center; margin-top: 0.5rem; font-size: 0.9em; color: #666;">Event poster</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                  <img src="assets/images/work001-03.png" style="width: 100%; border-radius: 10px;" alt="">
+                  <img src="assets/images/event001.png" style="width: 100%; border-radius: 10px;" alt="Performance shots">
+                  <p style="text-align: center; margin-top: 0.5rem; font-size: 0.9em; color: #666;">Performance shots</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-video" style="margin: 2rem 0;">
+              <iframe width="100%" height="400" src="https://www.youtube.com/embed/DwwNHEe7fJI?si=AJ8RcXF_mUZfFHoj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 10px;"></iframe>
+            </div>
+          </div>
+        `
+      },
+      "beat-hoven": {
+        title: "Beat-Hoven",
+        description: "An interactive, Arduino-based musical game featured in the IM Showcase.",
+        tags: ["Arduino", "Interactive Game", "Music", "Hardware", "P5.js"],
+        image: "assets/images/beat/beat5.png",
+        detailedContent: `
+          <div class="project-details">
+            <div style="text-align:center; margin-bottom: 1.5rem;">
+              <h2 style="margin: 0 0 0.5rem 0;">Beat-Hoven</h2>
+              <p style="font-size: 1.1em; color: #666; margin: 0;">A recreation of incredibox</p>
+            </div>
+            <blockquote>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">Inspired by Incredibox, I developed an interactive beatboxing interface using Arduino Uno and p5.js, integrating hardware and software for a seamless audio experience. I designed a laser-cut 3D box with wired buttons connected to the Arduino, enabling real-time character activation through serial communication in p5.js. Meticulous synchronization ensured smooth 8-second beatboxing loops, with dynamic visual feedback enhancing user engagement. The project was successfully showcased to a diverse audience, including children, artists, and music producers.</p>
+            </blockquote>
+            <div class="project-gallery" style="margin: 2rem 0;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                <div>
+                  <img src="assets/images/beat/beat0.jpeg" style="width: 100%; border-radius: 10px;" alt="Project">
+                </div>
+                <div>
+                  <img src="assets/images/beat/beat2.png" style="width: 100%; border-radius: 10px;" alt="Project">
+                </div>
+                <div>
+                  <img src="assets/images/beat/beat4.png" style="width: 100%; border-radius: 10px;" alt="Event Shots">
+                  <p style="text-align: center; margin-top: 0.5rem; font-size: 0.9em; color: #666;">Event Shots</p>
+                </div>
+                <div>
+                  <img src="assets/images/beat/beat3.png" style="width: 100%; border-radius: 10px;" alt="Project">
+                </div>
+              </div>
+            </div>
+            <div class="project-video" style="margin: 2rem 0;">
+              <iframe width="100%" height="400" src="https://www.youtube.com/embed/TwWIw3QLHok?si=Wjy6xCT_QKLRKKOp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 10px;"></iframe>
+            </div>
+          </div>
+        `
+      },
+      mindportal: {
+        title: "The MindPortal",
+        description: "An interactive and generative portal created using p5.js.",
+        tags: ["Generative Art", "P5.js", "Interactive Installation", "JavaScript"],
+        image: "assets/images/p5js/p5js.png",
+        detailedContent: `
+          <div class="project-details">
+            <div style="text-align:center; margin-bottom: 1.5rem;">
+              <h2 style="margin: 0 0 0.5rem 0;">The MetaPortal</h2>
+              <p style="font-size: 1.1em; color: #666; margin: 0;">A portal through art</p>
+            </div>
+            <blockquote>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">For this project, I created a series of eight generative visual illustrations using P5.js, leveraging sine, cosine, and tangent functions alongside frameCount to explore dynamic patterns and motion. Each piece allowed me to deepen my understanding of creative coding and algorithmic design. To showcase the works, I designed an interactive homepage where question marks conceal each illustration, encouraging user exploration. I refined the interface to prioritize curiosity and engagement, moving away from an initial 3D globe concept. To enhance the immersive experience, I integrated custom audio elements, including Lo-Fi beats and curated soundtracks, tailored to complement each visual composition.</p>
+            </blockquote>
+            <div style="text-align:center; margin-bottom: 2rem;">
+              <a href="https://zuett.github.io/Intro-midterm/index.html" class="btn btn-default" target="_blank" style="display:inline-block; background:#0077ff; color:#fff; padding:0.7em 1.5em; border-radius:8px; text-decoration:none; font-weight:500; margin-top:1em;">PROJECT LINK</a>
+            </div>
+            <div class="project-gallery" style="margin: 2rem 0;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                <div>
+                  <img src="assets/images/p5js/img1.png" style="width: 100%; border-radius: 10px;" alt="Visual 1">
+                </div>
+                <div>
+                  <img src="assets/images/p5js/img2.png" style="width: 100%; border-radius: 10px;" alt="Visual 2">
+                </div>
+                <div>
+                  <img src="assets/images/p5js/img3.png" style="width: 100%; border-radius: 10px;" alt="Visual 3">
+                  <p style="text-align: center; margin-top: 0.5rem; font-size: 0.9em; color: #666;">still shots of the dynamic visual illustrations</p>
+                </div>
+                <div>
+                  <img src="assets/images/p5js/img4.png" style="width: 100%; border-radius: 10px;" alt="Visual 4">
+                </div>
+              </div>
+            </div>
+            <div class="project-video" style="margin: 2rem 0;">
+              <iframe width="100%" height="400" src="https://www.youtube.com/embed/A33seYJlCF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 10px;"></iframe>
+            </div>
+          </div>
+        `
+      },
+      "photography": {
+        title: "Other Unity projects",
+        description: "VR projects i have worked on to enhance my skills",
+        tags: ["Unity", "C#", "Level Design"],
+        image: "assets/images/Logo.png",
+        detailedContent: `
+          <div class="project-details">
+            <div style="text-align:center; margin-bottom: 1.5rem;">
+              <h2 style="margin: 0 0 0.5rem 0;">Other Unity projects</h2>
+              <p style="font-size: 1.1em; color: #666; margin: 0;">Selected experiments and mini projects</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="unity-card" style="background:#fff; border-radius:12px; padding:1rem; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+                <h3 style="margin:0 0 0.5rem 0; font-size:1.1rem; color:#333;">Mini Game Level Design</h3>
+                <p style="margin:0 0 0.75rem 0; color:#555; line-height:1.6; font-size:0.95rem;">A 3D adventure game where Ellen explores an alien planet filled with strange flora, hostile creatures, and interactive puzzles. Using her wizard staff, she battles enemies, activates pressure pads, and escapes through a portal guarded by a powerful robot. The level combines exploration, combat, and environmental storytelling through color, sound, and progression.</p>
+                <div style="width:100%; border-radius:10px; overflow:hidden; margin:0 0 0.75rem 0;">
+                  <img src="assets/mini game.png" alt="Mini Game screenshot" style="width:100%; height:auto; display:block;">
+                </div>
+                <div style="width:100%; border-radius:10px; overflow:hidden; background:#000;">
+                  <iframe width="100%" height="240" src="https://www.youtube.com/embed/dX48YfDCQYQ" title="Mini Game Level Design" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:block;"></iframe>
+                </div>
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.75rem;">
+                  <span class="tag">Unity</span>
+                  <span class="tag">C#</span>
+                  <span class="tag">Lighting</span>
+                </div>
+              </div>
+
+              <div class="unity-card" style="background:#fff; border-radius:12px; padding:1rem; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+                <h3 style="margin:0 0 0.5rem 0; font-size:1.1rem; color:#333;">Coming soon</h3>
+                <p style="margin:0 0 0.75rem 0; color:#555; line-height:1.6; font-size:0.95rem;">Another Unity mini project will be showcased here.</p>
+                <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                  <span class="tag">Unity</span>
+                  <span class="tag">Prototyping</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      "meta-rave": {
+        title: "Alien Meta Rave",
+        description: "An immersive VR music performance that transforms live electronic music into a visual journey through alien landscapes and cosmic dimensions. This project combines real-time VR environments with live music performance, creating a unique hybrid experience where audiences can explore otherworldly visual spaces while experiencing electronic music in a completely new dimension.",
+        tags: ["Live Performance", "VR Music", "Audience Interaction", "Projection Mapping"],
+        image: "assets/images/alien_meta_rave.png",
+        documentationUrl: "https://gelatinous-spoon-60f.notion.site/Alien-Meta-Rave-1edd219a9a4d8021922fec5a13163948",
+        detailedContent: `
+          <div class="project-details">
+            <div style="text-align:center; margin-bottom: 1.5rem;">
+              <h2 style="margin: 0 0 0.5rem 0;">Alien Meta Rave</h2>
+              <p style="font-size: 1.1em; color: #666; margin: 0;">An immersive VR music performance</p>
+            </div>
+            <blockquote>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">
+                Alien Meta Rave is an immersive VR music performance that transforms live electronic music into a visual journey through alien landscapes and cosmic dimensions. This project combines real-time VR environments with live music performance, creating a unique hybrid experience where audiences can explore otherworldly visual spaces while experiencing electronic music in a completely new dimension.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">
+                The performance features a live VR world projected behind the performer, creating a seamless blend of physical and virtual reality. Through advanced projection mapping and real-time rendering, the audience is transported into an alien universe where music and visuals become one cohesive experience.
+              </p>
+            </blockquote>
+            <div class="project-video" style="margin: 2rem 0;">
+              <iframe width="100%" height="400" src="https://www.youtube.com/embed/ZsqNWQ55Z6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 10px;"></iframe>
+            </div>
+            <div class="project-video" style="margin: 2rem 0;">
+              <iframe width="100%" height="400" src="https://www.youtube.com/embed/SxU5oScNCRM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 10px;"></iframe>
+            </div>
+          </div>
+        `
+      },
+      "are-you-there": {
+        title: "Are You There?",
+        description: "A hybrid live and digital performance at La MaMa Studio (NYC), exploring embodiment and virtual identity through live interaction, projection, and a live DJ.",
+        tags: ["Hybrid Performance", "Digital Art", "Projection", "Live DJ", "p5Js"],
+        image: "https://via.placeholder.com/800x400/3b82f6/ffffff?text=Are+You+There?"
+      },
+      spiral: {
+        title: "The Spiral",
+        description: "A large-scale kinetic installation exhibited at NYU New York, integrating physical suspended structures with virtual counterparts in a synchronized interactive system.",
+        tags: ["Kinetic Installation", "Interactive Art", "QLC+ light design"],
+        image: "assets/the spiral.JPG",
+        documentationUrl: "https://gelatinous-spoon-60f.notion.site/LISKI-Final-Documentation-1eed219a9a4d8091802ac14552444c7b",
+        detailedContent: `
+          <div class="project-details">
+            <div style="text-align:center; margin-bottom: 1.5rem;">
+              <h2 style="margin: 0 0 0.5rem 0;">The Spiral</h2>
+              <p style="font-size: 1.1em; color: #666; margin: 0;">A large-scale kinetic installation</p>
+            </div>
+            <blockquote>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">
+                The Spiral is a large-scale kinetic installation exhibited at NYU New York, integrating physical suspended structures with virtual counterparts in a synchronized interactive system. This project explores the relationship between physical and digital spaces, creating a seamless blend of real and virtual elements.
+              </p>
+              <p style="font-size: 16px; line-height: 1.6; margin-bottom: 2rem;">
+                The installation features sophisticated lighting design using QLC+ software, creating dynamic visual patterns that respond to the physical movement of the suspended structures. The result is an immersive experience that challenges perceptions of space and reality.
+              </p>
+            </blockquote>
+            <div class="project-gallery" style="margin: 2rem 0;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                <div>
+                  <img src="assets/spiral1.webp" style="width: 100%; border-radius: 10px;" alt="Spiral Installation 1">
+                </div>
+                <div>
+                  <img src="assets/spiral2.webp" style="width: 100%; border-radius: 10px;" alt="Spiral Installation 2">
+                </div>
+                <div>
+                  <img src="assets/spiral3.webp" style="width: 100%; border-radius: 10px;" alt="Spiral Installation 3">
+                </div>
+                <div>
+                  <img src="assets/spiral4.JPG" style="width: 100%; border-radius: 10px;" alt="Spiral Installation 4">
+                  <p style="text-align: center; margin-top: 0.5rem; font-size: 0.9em; color: #666;">Installation views</p>
+                </div>
+              </div>
+            </div>
+            <div class="project-video" style="margin: 2rem 0;">
+              <iframe width="100%" height="400" src="https://www.youtube.com/embed/gQTK5G2yCJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 10px;"></iframe>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    // Modal functionality
+    const modal = document.getElementById('project-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalTags = document.getElementById('modal-tags');
+    const modalButtons = document.getElementById('modal-buttons');
+    const modalClose = document.querySelector('.modal-close');
+    const modalOverlay = document.querySelector('.modal-overlay');
+
+    // Open modal
+    function openModal(projectId) {
+      const project = projectData[projectId];
+      if (project) {
+        modalImg.src = project.image;
+        modalImg.alt = project.title;
+        // Show or hide the modalTitle based on detailedContent
+        if (project.detailedContent) {
+          modalTitle.style.display = 'none';
+          modalDescription.innerHTML = project.detailedContent;
+        } else {
+          modalTitle.style.display = '';
+          modalTitle.textContent = project.title;
+          modalDescription.textContent = project.description;
+        }
+        // Clear and populate tags
+        modalTags.innerHTML = '';
+        project.tags.forEach(tag => {
+          const tagElement = document.createElement('span');
+          tagElement.className = 'tag';
+          tagElement.textContent = tag;
+          modalTags.appendChild(tagElement);
+        });
+        // Handle documentation button
+        modalButtons.innerHTML = '';
+        if (project.documentationUrl) {
+          const docButton = document.createElement('a');
+          docButton.href = project.documentationUrl;
+          docButton.target = '_blank';
+          docButton.className = 'btn btn-default';
+          docButton.textContent = 'Documentation';
+          docButton.style.cssText = 'display:inline-block; background:#0077ff; color:#fff; padding:0.7em 1.5em; border-radius:8px; text-decoration:none; font-weight:500; margin-top:1em;';
+          modalButtons.appendChild(docButton);
+        }
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Hide navigation bar
+        const nav = document.querySelector('.nav-sticky-wrapper');
+        if (nav) {
+          nav.style.display = 'none';
+        }
+        // Scroll modal content to top
+        const modalContent = document.querySelector('.modal-content');
+        if (modalContent) {
+          modalContent.scrollTop = 0;
+        }
+      }
+    }
+
+    // Close modal
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      // Show navigation bar
+      const nav = document.querySelector('.nav-sticky-wrapper');
+      if (nav) {
+        nav.style.display = '';
+      }
+    }
+
+    // Event listeners
+    document.querySelectorAll('.view-project-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const projectCard = btn.closest('.project-card');
+        const projectId = projectCard.dataset.project;
+        openModal(projectId);
+      });
+    });
+
+    // Open modal from quad sub-cards
+    document.querySelectorAll('.project-quad-item').forEach(tile => {
+      tile.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const projectId = tile.dataset.project;
+        openModal(projectId);
+      });
+    });
+
+    // Coming Soon buttons - no action needed
+    document.querySelectorAll('.coming-soon-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // No action - button is disabled
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  </script>
+  <script>
+    // --- Gradient Blob ---
+    const canvas = document.getElementById('blob-canvas');
+    if (!canvas) { console.error('blob-canvas not found'); }
+    const ctx = canvas ? canvas.getContext('2d') : null;
+    if (!ctx) { console.error('2d context for blob-canvas not found'); }
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let mouse = { x: width/2, y: height/2 };
+    let blob = { x: width/2, y: height/2 };
+    const ease = 0.12;
+    function resizeBlobCanvas() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      if (canvas) {
+        canvas.width = width;
+        canvas.height = height;
+      }
+    }
+    window.addEventListener('resize', resizeBlobCanvas);
+    resizeBlobCanvas();
+    document.addEventListener('mousemove', e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+    
+    // Custom cursor dot
+    const cursorDot = document.querySelector('.custom-cursor');
+    document.addEventListener('mousemove', e => {
+      if (cursorDot) {
+        cursorDot.style.left = e.clientX - 8 + 'px';
+        cursorDot.style.top = e.clientY - 8 + 'px';
+      }
+    });
+    function drawBlob() {
+      if (!ctx) return;
+      
+      // Check if page is still loading
+      if (document.getElementById('loader-overlay').style.display !== 'none') {
+        requestAnimationFrame(drawBlob);
+        return;
+      }
+      
+      // Easing
+      blob.x += (mouse.x - blob.x) * ease;
+      blob.y += (mouse.y - blob.y) * ease;
+      ctx.clearRect(0, 0, width, height);
+      
+      // Simplified blob shape for better performance
+      const sizeMultiplier = getBlobSize();
+      const r = Math.max(150, Math.min(width, height) * 0.2) * sizeMultiplier;
+      const grad = ctx.createRadialGradient(blob.x, blob.y, r * 0.2, blob.x, blob.y, r);
+      
+      // Reduced opacity calculations
+      const opacity = sizeMultiplier < 0.5 ? 0.9 : 0.75;
+      grad.addColorStop(0, `rgba(120, 0, 255, ${opacity})`);
+      grad.addColorStop(0.5, `rgba(0, 180, 255, ${opacity * 0.7})`);
+      grad.addColorStop(1, 'rgba(16,16,26,0)');
+      
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(blob.x, blob.y, r, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.fillStyle = grad;
+      ctx.filter = 'blur(24px)'; // Reduced blur for better performance
+      ctx.fill();
+      ctx.filter = 'none';
+      ctx.restore();
+      
+      // Use a longer delay for better performance
+      setTimeout(() => requestAnimationFrame(drawBlob), 32); // ~30fps for better performance
+    }
+    if (ctx) drawBlob();
+    function getBlobSize() {
+      // Cache hero element and use a more efficient calculation
+      if (!getBlobSize.hero) {
+        getBlobSize.hero = document.getElementById('hero-section');
+      }
+      const hero = getBlobSize.hero;
+      const rect = hero.getBoundingClientRect();
+      
+      // Simplified calculation to reduce computational overhead
+      if (rect.bottom <= 0) return 0.25;
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) return 1;
+      
+      // Use a simpler ratio calculation
+      const ratio = Math.max(0, rect.bottom) / window.innerHeight;
+      return Math.max(0.25, Math.min(1, ratio));
+    }
+
+    // --- Rotating XR Title ---
+    const titles = ['Developer', 'Researcher', 'Designer'];
+    let idx = 0;
+    const rotator = document.getElementById('rotating-title');
+    function animateTitle() {
+      // Fade out
+      rotator.style.opacity = 0;
+      rotator.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        idx = (idx + 1) % titles.length;
+        rotator.textContent = titles[idx];
+        // Fade in
+        rotator.style.opacity = 1;
+        rotator.style.transform = 'translateY(0)';
+      }, 350);
+    }
+    setInterval(animateTitle, 2500);
+    // Initial state
+    rotator.style.transition = 'opacity 0.35s, transform 0.35s';
+    rotator.style.opacity = 1;
+    rotator.style.transform = 'translateY(0)';
+  </script>
+  <script>
+    // Fade in nav when user scrolls past hero section
+    document.addEventListener('DOMContentLoaded', function() {
+      const nav = document.querySelector('.nav-sticky-wrapper');
+      const hero = document.getElementById('hero-section');
+      const scrollIndicator = document.querySelector('.scroll-indicator');
+      
+      let ticking = false;
+      let lastScrollY = 0;
+      let scrollThrottle = 0;
+      
+      function onScroll() {
+        const currentScrollY = window.scrollY;
+        const now = Date.now();
+        
+        // Throttle scroll events to every 16ms (60fps)
+        if (now - scrollThrottle < 16) return;
+        scrollThrottle = now;
+        
+        // Only process if scroll position changed significantly
+        if (Math.abs(currentScrollY - lastScrollY) < 10) return;
+        
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const heroBottom = hero.getBoundingClientRect().bottom;
+            const scrollY = window.scrollY;
+            
+            // Handle nav visibility
+            if (heroBottom <= 0) {
+              nav.classList.add('nav-visible');
+            } else {
+              nav.classList.remove('nav-visible');
+            }
+            
+            // Handle scroll indicator fade out
+            if (scrollIndicator) {
+              if (scrollY > 300) {
+                scrollIndicator.classList.add('fade-out');
+              } else {
+                scrollIndicator.classList.remove('fade-out');
+              }
+            }
+            
+            lastScrollY = scrollY;
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // Initial check
+    });
+  </script>
+  <script>
+    window.addEventListener('load', function() {
+      // Wait for all content to load and initialize
+      setTimeout(function() {
+        // Initialize blob animation after a delay to ensure smooth performance
+        if (ctx) {
+          setTimeout(() => drawBlob(), 1000);
+        }
+        
+        // Hide loader after everything is ready
+        setTimeout(function() {
+          document.getElementById('loader-overlay').classList.add('hide');
+          setTimeout(function() {
+            document.getElementById('loader-overlay').style.display = 'none';
+          }, 500);
+        }, 2000); // Extended to 2 seconds for better performance
+      }, 1000);
+    });
+
+    // Compact work cards expandable functionality
+    document.querySelectorAll('.compact-work-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('data-expanded') === 'true';
+        const expandedContent = this.querySelector('.expanded-work-content');
+        const expandIndicator = this.querySelector('.expand-indicator');
+        
+        if (isExpanded) {
+          // Collapse
+          expandedContent.style.display = 'none';
+          expandIndicator.textContent = 'View more';
+          this.setAttribute('data-expanded', 'false');
+          this.classList.remove('expanded');
+        } else {
+          // Expand
+          expandedContent.style.display = 'block';
+          expandIndicator.textContent = 'View less';
+          this.setAttribute('data-expanded', 'true');
+          this.classList.add('expanded');
+        }
+      });
+    });
+
+    // Mobile hamburger menu functionality
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuToggle && navMenu) {
+      mobileMenuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+      });
+      
+      // Close menu when clicking on nav links
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+          mobileMenuToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+
+    // Mobile-specific optimizations
+    function isMobile() {
+      return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    // Improve touch scrolling on mobile
+    if (isMobile()) {
+      // Add passive event listeners for better performance
+      document.addEventListener('touchstart', function() {}, { passive: true });
+      document.addEventListener('touchmove', function() {}, { passive: true });
+      
+      // Prevent zoom on double tap
+      let lastTouchEnd = 0;
+      document.addEventListener('touchend', function(event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+      
+      // Improve modal scrolling on mobile
+      const modal = document.getElementById('project-modal');
+      if (modal) {
+        modal.addEventListener('touchstart', function(e) {
+          this.scrollTop = 0;
+        }, { passive: true });
+      }
+    }
+  </script>
+</body>
+</html> 
