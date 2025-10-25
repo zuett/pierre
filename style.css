@@ -197,7 +197,7 @@ section h2 {
 }
 
 .contact-title {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   color: #a78bfa;
@@ -928,6 +928,16 @@ a, button, .btn {
 
 .project-quad-item[data-project="unity-proj-2"] {
   background: url('assets/images/VR shooting game/VR shooting game.png') center/cover no-repeat;
+}
+
+.project-quad-item[data-project="unity-proj-3"] {
+  background: url('assets/pyramid.png') center/cover no-repeat;
+}
+
+.project-quad-item.cinemachine-wide {
+  grid-column: span 2;
+  grid-row: 2;
+  aspect-ratio: 2/1;
 }
 
 .project-quad-item:hover {
