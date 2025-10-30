@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div id="loader-overlay" style="position:fixed;z-index:9999;inset:0;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
     <div class="loader">
       <!-- Y (for style defs) -->
@@ -75,11 +76,11 @@
     <div class="nav-sticky-wrapper">
       <div class="nav-card">
         <!-- Mobile hamburger menu -->
-        <div class="mobile-menu-toggle">
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
         
         <nav class="nav-menu">
           <ul>
@@ -93,7 +94,7 @@
     </div>
   </header>
   <div style="height: 64px;"></div>
-  <main>
+  <main id="main-content">
     <section id="personal">
       <div class="personal-container">
         <div class="profile-card">
@@ -425,19 +426,19 @@
             <div style=\"margin-top: 1rem;\">
               <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;\">
                 <figure style=\"margin:0; background:#fff; border-radius:10px; overflow:hidden;\">
-                  <img src=\"assets/images/mini game/creating terrain.png\" alt=\"creating terrain\" style=\"width:100%; height:auto; display:block;\">
+                  <img src=\"assets/images/Mini Game/creating terrain.png\" alt=\"creating terrain\" style=\"width:100%; height:auto; display:block;\">
                   <figcaption style=\"padding:0.5rem 0.75rem; font-size:0.9rem; color:#555;\">creating terrain</figcaption>
                 </figure>
                 <figure style=\"margin:0; background:#fff; border-radius:10px; overflow:hidden;\">
-                  <img src=\"assets/images/mini game/adding rocks and environment.png\" alt=\"adding rocks and environment\" style=\"width:100%; height:auto; display:block;\">
+                  <img src=\"assets/images/Mini Game/adding rocks and environment.png\" alt=\"adding rocks and environment\" style=\"width:100%; height:auto; display:block;\">
                   <figcaption style=\"padding:0.5rem 0.75rem; font-size:0.9rem; color:#555;\">adding rocks and environment</figcaption>
                 </figure>
                 <figure style=\"margin:0; background:#fff; border-radius:10px; overflow:hidden;\">
-                  <img src=\"assets/images/mini game/adding and coding moving platforms.png\" alt=\"adding and coding moving platforms\" style=\"width:100%; height:auto; display:block;\">
+                  <img src=\"assets/images/Mini Game/adding and coding moving platforms.png\" alt=\"adding and coding moving platforms\" style=\"width:100%; height:auto; display:block;\">
                   <figcaption style=\"padding:0.5rem 0.75rem; font-size:0.9rem; color:#555;\">adding and coding moving platforms</figcaption>
                 </figure>
                 <figure style=\"margin:0; background:#fff; border-radius:10px; overflow:hidden;\">
-                  <img src=\"assets/images/mini game/creating nav mesh for creatures.png\" alt=\"creating nav mesh for creatures\" style=\"width:100%; height:auto; display:block;\">
+                  <img src=\"assets/images/Mini Game/creating nav mesh for creatures.png\" alt=\"creating nav mesh for creatures\" style=\"width:100%; height:auto; display:block;\">
                   <figcaption style=\"padding:0.5rem 0.75rem; font-size:0.9rem; color:#555;\">creating nav mesh for creatures</figcaption>
                 </figure>
               </div>
@@ -1390,9 +1391,11 @@
     
     if (mobileMenuToggle && navMenu) {
       mobileMenuToggle.addEventListener('click', function() {
+        const isActive = this.classList.contains('active');
         this.classList.toggle('active');
         navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+        this.setAttribute('aria-expanded', !isActive);
+        document.body.style.overflow = !isActive ? 'hidden' : 'auto';
       });
       
       // Close menu when clicking on nav links
