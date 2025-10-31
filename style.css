@@ -238,7 +238,7 @@ section h2 {
 
 .contact-text {
   font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #ffffff;
   font-weight: 700;
   white-space: nowrap;
@@ -284,12 +284,12 @@ section h2 {
 .btn::before {
   content: '';
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   background: #6366f1;
   border-radius: 50%;
-  right: 8px;
-  top: 8px;
+  right: -10px;
+  top: 10px;
   z-index: 10;
   filter: blur(8px);
   transition: all 0.5s ease;
@@ -298,12 +298,12 @@ section h2 {
 .btn::after {
   content: '';
   position: absolute;
-  width: 64px;
-  height: 64px;
+  width: 42px;
+  height: 42px;
   background: #2dd4bf;
   border-radius: 50%;
-  right: 24px;
-  top: 16px;
+  right: 6px;
+  top: 14px;
   z-index: 10;
   filter: blur(8px);
   transition: all 0.5s ease;
@@ -316,14 +316,14 @@ section h2 {
 }
 
 .btn:hover::before {
-  right: 40px;
-  bottom: -16px;
+  right: 0px;
+  top: 12px;
   filter: blur(8px);
 }
 
 .btn:hover::after {
-  right: -24px;
-  transform: scale(1.1);
+  right: -18px;
+  transform: scale(1.05);
 }
 
 
@@ -1467,7 +1467,7 @@ a, button, .btn {
   }
   
   .contact-text {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   
   /* Improve work experience cards */
@@ -1601,7 +1601,7 @@ a, button, .btn {
   }
   
   .contact-text {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
   
   /* Improve work cards */
