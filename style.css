@@ -631,10 +631,10 @@ a, button, .btn {
 }
 
 .work-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(245, 245, 245, 0.75) 50%, rgba(224, 224, 224, 0.75) 100%);
-  backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1),
-              -20px -20px 60px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(245, 245, 245, 0.55) 50%, rgba(224, 224, 224, 0.5) 100%);
+  backdrop-filter: blur(6px);
+  box-shadow: 12px 12px 36px rgba(0, 0, 0, 0.08),
+              -12px -12px 36px rgba(255, 255, 255, 0.35);
   border-radius: 25px;
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -644,9 +644,9 @@ a, button, .btn {
 }
 
 .work-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 25px 25px 70px rgba(0, 0, 0, 0.15),
-              -25px -25px 70px rgba(255, 255, 255, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 16px 16px 48px rgba(0, 0, 0, 0.12),
+              -16px -16px 48px rgba(255, 255, 255, 0.3);
 }
 
 .work-image {
@@ -727,10 +727,10 @@ a, button, .btn {
 
 .compact-work-card {
   flex: 1;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(245, 245, 245, 0.75) 50%, rgba(224, 224, 224, 0.75) 100%);
-  backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1),
-              -20px -20px 60px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(245, 245, 245, 0.55) 50%, rgba(224, 224, 224, 0.5) 100%);
+  backdrop-filter: blur(6px);
+  box-shadow: 12px 12px 36px rgba(0, 0, 0, 0.08),
+              -12px -12px 36px rgba(255, 255, 255, 0.35);
   border-radius: 25px;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -744,9 +744,9 @@ a, button, .btn {
 }
 
 .compact-work-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 25px 25px 70px rgba(0, 0, 0, 0.15),
-              -25px -25px 70px rgba(255, 255, 255, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 16px 16px 48px rgba(0, 0, 0, 0.12),
+              -16px -16px 48px rgba(255, 255, 255, 0.3);
 }
 
 .compact-work-card.expanded {
@@ -1727,18 +1727,14 @@ a, button, .btn {
     border-radius: 8px;
   }
   
-  /* Improve YouTube embeds on mobile */
+  /* Improve YouTube embeds on mobile - aspect-ratio handles height */
   .project-video iframe {
     width: 100%;
-    height: 250px;
   }
 }
 
 @media (max-width: 480px) {
-  /* Extra small screen video adjustments */
-  .project-video iframe {
-    height: 200px;
-  }
+  /* Extra small screens - aspect-ratio keeps height proportional */
   
   /* Better modal images on small screens */
   .modal-image img {
@@ -1972,9 +1968,17 @@ img {
 }
 
 /* Improve video accessibility */
-video, iframe {
+video {
   max-width: 100%;
   height: auto;
+}
+
+/* Make embedded videos consistently tall with 16:9 ratio */
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  display: block;
 }
 
 /* Improve modal accessibility */

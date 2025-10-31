@@ -8,6 +8,9 @@
   <link rel="icon" type="image/png" href="assets/images/Logo.png">
   <link rel="apple-touch-icon" href="assets/images/Logo.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Meddon&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
@@ -85,9 +88,9 @@
         <nav class="nav-menu">
           <ul>
             <li><a href="#personal">Personal</a></li>
-            <li><a href="#work-experience">Work Experience</a></li>
             <li><a href="#research">Research</a></li>
             <li><a href="#personal-work">Personal Work</a></li>
+            <li><a href="#work-experience">Work Experience</a></li>
           </ul>
         </nav>
       </div>
@@ -100,7 +103,7 @@
         <div class="profile-card">
           <div class="profile-card-glow"></div>
           <div class="profile-card-inner">
-            <img src="assets/portfolio_pic.jpg" alt="Pierre" class="profile-image">
+            <img src="assets/portfolio_pic.jpg" alt="Pierre" class="profile-image" loading="eager" fetchpriority="high" decoding="async">
           </div>
         </div>
         
@@ -163,70 +166,6 @@
                   </div>
                   <a href="tel:+971559845520" class="contact-text">+971 559845520</a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="work-experience">
-      <h2>Work Experience</h2>
-      <div class="work-grid">
-        <div class="work-card">
-          <div class="work-image">
-            <img src="assets/mental.png" alt="Mental.ae">
-          </div>
-          <div class="work-content">
-            <h3>Internship</h3>
-            <h4>Mental.ae | Abu Dhabi, UAE | Nov 2024 - Jan 2025</h4>
-            <p>I executed comprehensive QA testing on interactive food safety training modules, identifying critical UX flaws to enhance usability. Utilizing Cinemachine within Unity 3D, I utilized dynamic camera systems that significantly increased user engagement and collaborated with a cross-functional team to ensure all project milestones were met.</p>
-            <div class="tech-tags">
-              <span class="tag">QA Testing</span>
-              <span class="tag">UX Design</span>
-              <span class="tag">Unity 3D</span>
-              <span class="tag">Cinemachine</span>
-              <span class="tag">Project Management</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="compact-work-row">
-          <div class="compact-work-card" data-expanded="false">
-            <div class="compact-work-image">
-              <img src="assets/athletics.jpg" alt="NYU Athletics Center">
-            </div>
-            <div class="compact-work-content">
-              <h3>Fitness Assistant Coach</h3>
-              <h4>NYU Athletics Center | Shanghai | Jan - May 2024</h4>
-              <div class="expand-indicator">View more</div>
-            </div>
-            <div class="expanded-work-content" style="display: none;">
-              <p>My role involved guiding members on the safe and effective use of fitness equipment and preventing injury. I also developed and led wellness activities and group fitness sessions to promote a campus-wide culture of health and well-being.</p>
-              <div class="tech-tags">
-                <span class="tag">Health & Wellness</span>
-                <span class="tag">Fitness Instruction</span>
-                <span class="tag">Community Engagement</span>
-                <span class="tag">Safety Protocols</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="compact-work-card" data-expanded="false">
-            <div class="compact-work-image">
-              <img src="assets/RA.jpg" alt="NYU Housing">
-            </div>
-            <div class="compact-work-content">
-              <h3>Residential Assistant</h3>
-                <h4>NYU Housing | Abu Dhabi | Aug - Nov 2023, Aug 2025 - present</h4>
-              <div class="expand-indicator">View more</div>
-            </div>
-            <div class="expanded-work-content" style="display: none;">
-              <p>As a Residential Assistant, I executed diverse social and educational events designed to foster an inclusive and engaged residential community. I also advised students on academic and personal concerns, connecting them with key university resources.</p>
-              <div class="tech-tags">
-                <span class="tag">Community Building</span>
-                <span class="tag">Event Planning</span>
-                <span class="tag">Mentorship</span>
-                <span class="tag">Peer Support</span>
               </div>
             </div>
           </div>
@@ -381,6 +320,71 @@
       </div>
     </section>
 
+    <section id="work-experience">
+      <h2>Work Experience</h2>
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="work-image">
+            <img src="assets/mental.png" alt="Mental.ae">
+          </div>
+          <div class="work-content">
+            <h3>Internship</h3>
+            <h4>Mental.ae | Abu Dhabi, UAE | Nov 2024 - Jan 2025</h4>
+            <p>I executed comprehensive QA testing on interactive food safety training modules, identifying critical UX flaws to enhance usability. Utilizing Cinemachine within Unity 3D, I utilized dynamic camera systems that significantly increased user engagement and collaborated with a cross-functional team to ensure all project milestones were met.</p>
+            <div class="tech-tags">
+              <span class="tag">QA Testing</span>
+              <span class="tag">UX Design</span>
+              <span class="tag">Unity 3D</span>
+              <span class="tag">Cinemachine</span>
+              <span class="tag">Project Management</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="compact-work-row">
+          <div class="compact-work-card" data-expanded="false">
+            <div class="compact-work-image">
+              <img src="assets/athletics.jpg" alt="NYU Athletics Center">
+            </div>
+            <div class="compact-work-content">
+              <h3>Fitness Assistant Coach</h3>
+              <h4>NYU Athletics Center | Shanghai | Jan - May 2024</h4>
+              <div class="expand-indicator">View more</div>
+            </div>
+            <div class="expanded-work-content" style="display: none;">
+              <p>My role involved guiding members on the safe and effective use of fitness equipment and preventing injury. I also developed and led wellness activities and group fitness sessions to promote a campus-wide culture of health and well-being.</p>
+              <div class="tech-tags">
+                <span class="tag">Health & Wellness</span>
+                <span class="tag">Fitness Instruction</span>
+                <span class="tag">Community Engagement</span>
+                <span class="tag">Safety Protocols</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="compact-work-card" data-expanded="false">
+            <div class="compact-work-image">
+              <img src="assets/RA.jpg" alt="NYU Housing">
+            </div>
+            <div class="compact-work-content">
+              <h3>Residential Assistant</h3>
+                <h4>NYU Housing | Abu Dhabi | Aug - Nov 2023, Aug 2025 - present</h4>
+              <div class="expand-indicator">View more</div>
+            </div>
+            <div class="expanded-work-content" style="display: none;">
+              <p>As a Residential Assistant, I executed diverse social and educational events designed to foster an inclusive and engaged residential community. I also advised students on academic and personal concerns, connecting them with key university resources.</p>
+              <div class="tech-tags">
+                <span class="tag">Community Building</span>
+                <span class="tag">Event Planning</span>
+                <span class="tag">Mentorship</span>
+                <span class="tag">Peer Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Project Modal -->
     <div id="project-modal" class="modal">
       <div class="modal-overlay"></div>
@@ -400,6 +404,19 @@
 
   </main>
   
+  <script>
+    // Performance: set lazy loading on images by default (except above-the-fold)
+    document.addEventListener('DOMContentLoaded', function() {
+      const eagerSelectors = ['.profile-image'];
+      const shouldEager = (img) => eagerSelectors.some(sel => img.matches(sel));
+      document.querySelectorAll('img').forEach(img => {
+        if (!shouldEager(img)) {
+          if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+          if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+        }
+      });
+    });
+  </script>
   <script>
     // Project data for modal content
     const projectData = {
@@ -1345,21 +1362,16 @@
   </script>
   <script>
     window.addEventListener('load', function() {
-      // Wait for all content to load and initialize
+      // Initialize blob animation quickly after load
+      if (ctx) {
+        requestAnimationFrame(() => drawBlob());
+      }
+      // Hide loader promptly after load for better perceived performance
+      const overlay = document.getElementById('loader-overlay');
+      overlay.classList.add('hide');
       setTimeout(function() {
-        // Initialize blob animation after a delay to ensure smooth performance
-        if (ctx) {
-          setTimeout(() => drawBlob(), 1000);
-        }
-        
-        // Hide loader after everything is ready
-        setTimeout(function() {
-          document.getElementById('loader-overlay').classList.add('hide');
-          setTimeout(function() {
-            document.getElementById('loader-overlay').style.display = 'none';
-          }, 500);
-        }, 2000); // Extended to 2 seconds for better performance
-      }, 1000);
+        overlay.style.display = 'none';
+      }, 400);
     });
 
     // Compact work cards expandable functionality
